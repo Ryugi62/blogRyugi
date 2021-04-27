@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogRyugi</title>
+    <style>
+        html, body, h1 {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        .header, .footer {
+            text-align: center;
+            background-color: #eeeeee;
+        }
+
+        .header {
+            height: 5%;
+            border-bottom: 1px gray solid;
+        }
+
+        .body {
+            height: 85%;
+            display: flex;
+        }
+
+        .contents {
+            width: 15%;
+            padding: 10px;
+            overflow-y: auto;
+            border-left: 1px gray solid;
+            border-right: 1px gray solid;
+        }
+
+        .contents li {
+            margin: 2px;
+        }
+
+        .mainTable {
+            width: 85%;
+        }
+
+        .mainTitle {
+            height: 15%;
+            border-bottom: 1px gray solid;
+        }
+
+        .mainText {
+            height: 85%;
+            overflow-y: auto;
+        }
+
+        .footer {
+            height: 10%;
+            border-top: 1px gray solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{message}}</h1>
+    </div>
+    <div class="body">
+        <div class="contents">
+            <li>목록</li>
+            <li>목록</li>
+            <li>목록</li>
+            <li>목록</li>
+            <li>목록</li>
+        </div>
+        <div class="mainTable">
+            <div class="mainTitle">제목</div>
+            <div class="mainText">
+                <div class="text" v-for='message in 1000'>
+                    {{message}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h1>Footer</h1>
+    </div>
+
+    <script>
+    let app = new Vue({
+        el: '.header',
+        data: {
+            message: 'Ryugi Blog'
+        }
+    })
+    
+    let text = new Vue({
+        el: '.text',
+        data: {
+            message: ['미안하다 이거 보여주려고 어그로 끌었다. 나루토 사스케 싸움수준 ㄹㅇ실화냐?']
+        }
+    })
+    </script>
+</body>
+</html>
